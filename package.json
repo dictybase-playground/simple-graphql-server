@@ -1,0 +1,19 @@
+{
+  "name": "simple-graphql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dictybase-playground/simple-graphql-server.git"
+  },
+  "author": "Ayaan Siddiqui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dictybase-playground/simple-graphql-server/issues"
+  },
+  "homepage": "https://github.com/dictybase-playground/simple-graphql-server#readme"
+}
