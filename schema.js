@@ -13,8 +13,13 @@ const schema = buildSchema(`
     email: String
   }
 
+  type Message {
+    message: String
+  }
+
   type Query {
     friend: Friend
+    message: Message
   }
 `)
 

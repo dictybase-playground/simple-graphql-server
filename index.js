@@ -25,6 +25,11 @@ const root = {
       ],
     }
   },
+  message: () => {
+    return {
+      message: "Hello",
+    }
+  },
 }
 
 app.use(
