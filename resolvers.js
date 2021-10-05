@@ -1,11 +1,5 @@
-const friendDatabase = [
-  {
-    firstName: "Ayaan",
-    lastName: "Siddiqui",
-    gender: "male",
-    email: "moahammedayaan.dev@gmail.com",
-  },
-]
+const friendDatabase = []
+let counter = 0
 
 class Friend {
   constructor(id, { firstName, lastName, gender, email }) {
@@ -18,11 +12,12 @@ class Friend {
 }
 
 const resolvers = {
-  getFriend: ({ id }) => {
+  friend: ({ id }) => {
     return new Friend(id, friendDatabase[id - 1])
   },
+  friends: () => friendDatabase.map((friend, i) => new Friend(i, friend)),
   createFriend: ({ input }) => {
-    const id = require("crypto").randomBytes(10).toString("hex")
+    const id = counter++
     friendDatabase[id] = input
     return new Friend(id, input)
   },
