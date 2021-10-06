@@ -1,25 +1,29 @@
-const friendDatabase = []
+const posts = []
 let counter = 0
 
-class Friend {
-  constructor(id, { firstName, lastName, gender, email }) {
+class Post {
+  constructor(id, { title, content, published }) {
     this.id = id
-    this.firstName = firstName
-    this.lastName = lastName
-    this.gender = gender
-    this.email = email
+    this.title = title
+    this.content = content
+    this.published = published
   }
 }
 
 const resolvers = {
-  friend: ({ id }) => {
-    return new Friend(id, friendDatabase[id - 1])
+  post: ({ id }) => {
+    return posts[id]
   },
-  friends: () => friendDatabase.map((friend, i) => new Friend(i, friend)),
-  createFriend: ({ input }) => {
+  posts: () => posts,
+  createPost: ({ input }) => {
     const id = counter++
-    friendDatabase[id] = input
-    return new Friend(id, input)
+    const newPost = new Post(id, {
+      title: input.title,
+      content: input.content,
+      published: Date.now().toString(),
+    })
+    posts[id] = newPost
+    return newPost
   },
 }
 
