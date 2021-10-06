@@ -2,8 +2,11 @@ import express from "express"
 import schema from "./schema"
 import { graphqlHTTP } from "express-graphql"
 import resolvers from "./resolvers"
+import cors from "cors"
 
 const app = express()
+
+app.use(cors())
 
 app.get("/", (_, res) => {
   res.redirect("/graphql")
